@@ -1,0 +1,58 @@
+
+  <div class="w-full mt-16 px-14 ">
+    <div class="W-full bg-blue-500 p-2"  >
+      <h1 class="text-2xl font-Montserrat text-white">Create New Hotel</h1>
+    </div>
+    <div class="flex">
+    <form class="w-full pt-5  px-2 flex flex-col gap-1" [formGroup]="FormData" (submit)="onSubmit()">
+      <div class="flex  flex-col" >
+        <label for="name">Name:</label><br>
+        <input type="text" name="HotelName" id="name" placeholder="Name of Hotel" class="h-10 w-108 border text-center" formControlName="name">
+      </div>
+      <div class="flex  flex-col gap-4" >
+        <label for="description">Description:</label>
+        <textarea name="HotelDescription" id="description" placeholder="Description" class="h-10 w-108 border text-center opacity-45" formControlName="description" ></textarea>
+      </div>
+      <div class="flex  flex-col">
+        <label for="price">Price:</label><br>
+        <input type="number" name="HotelPrice" id="price" class="h-10 w-108 border text-center" placeholder="200" formControlName="price">
+      </div>
+      <div class="flex  flex-col">
+        <label for="img">Image:</label><br>
+        <input type="text" placeholder="http://www.pixabal-vlogon.png" id="img" name="HotelImage" class="h-10 w-108 border text-center" formControlName="image">
+      </div>
+      <div class="flex  flex-col">
+        <label for="address">Address:</label><br>
+        <input type="text" name="HotelAddress" id="address" placeholder="Address" class="h-10 w-108 border text-center" formControlName="address">
+      </div>
+      <div class="flex  flex-col">
+        <label for="city">City:</label><br>
+        <input type="text" name="HotelCity" id="city" placeholder="city Hotel" class="h-10 w-108 border text-center" formControlName="city">
+      </div>
+      <div class="flex  flex-col">
+        <label for="phone">phone:</label><br>
+        <input type="text" name="HotelPhone" id="phone" placeholder="Tel:" class="h-10 w-108 border text-center" formControlName="phone">
+      </div>
+      <div  class="flex  flex-col">
+        <label for="mail">Email:</label><br>
+        <input type="email" name="HotelEmail" id="mail" placeholder="Electronic Address" class="h-10 w-108 border text-center" formControlName="email">
+      </div>
+      <div class="flex  flex-col">
+        <label for="country">Country</label><br>
+        <input type="text" name="HotelCountry" id="country" placeholder="Country" class="h-10 w-108 border text-center" formControlName="country">
+      </div>
+      <div class="h-36 pt-7 flex gap-3">
+        <button type="submit" class=" bg-blue-500  text-center py-1 h-14 px-2 w-36 rounded-lg font-bold text-lg text-white cursor-pointer border-none font-Montserrat">Create</button>
+        <button type="button" class=" bg-green-500  text-center py-1 h-14 px-2 w-36 rounded-lg font-bold text-lg text-white cursor-pointer border-none font-Montserrat" routerLink="">Reset</button>
+        <button type="reset" class=" bg-red-600  text-center py-1 h-14 px-2 w-36 rounded-lg font-bold text-lg text-white cursor-pointer border-none font-Montserrat" >Delete</button>
+      </div>
+    </form>
+      <div *ngIf="hotelPreview$ | async as hotel">
+        <p>{{hotel.name}}</p>
+        <p>{{hotel.description}}</p>
+        <p>{{hotel.price}}</p>
+        <p>{{hotel.image}}</p>
+        <p>{{hotel.address}}</p>
+      </div>
+    </div>
+  </div>

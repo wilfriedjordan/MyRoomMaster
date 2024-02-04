@@ -1,0 +1,18 @@
+
+  <span>{{messageStart}}</span>
+<div class="w-80 border-2 border-solid border-sky-100 rounded-t-xl mb-4 relative">
+  <div class="w-full rounded-xl" >
+    <img [src]="hotel.image" alt="hotel.name" class="w-full h-60 rounded-t-xl">
+  </div>
+  <div class= "p-4 bg-slate-200 text-black">
+    <h2 class="text-xl">{{hotel.name | titlecase}}</h2>
+    <h3 class="text-hoveColor">{{hotel.description | titlecase |shorting }}</h3>
+    <span class="text-hoveColor text-lg">{{hotel.phone}}</span>
+    <p class="text-blue-600 font-bold text-lg">{{hotel.price | currency}}</p>
+  </div>
+  <!-- <app-start-reting [start]="hotel.start" (change)="NbStart($event)" ></app-start-reting> -->
+  <p class="absolute right-6 top-60 bg-blue-400 rounded-full w-20 text-center py-2" >
+    <a class="text-xl" [routerLink]="['hotel',hotel.id,'edit']" ><i class="fa-solid fa-pencil"></i></a>
+  </p>
+  <button class="absolute right-6 top-80 bg-green-400 w-28 text-center py-1 rounded-lg font-bold text-lg text-white cursor-pointer border-none" (click)="viewDetail()">Detail</button>
+</div>

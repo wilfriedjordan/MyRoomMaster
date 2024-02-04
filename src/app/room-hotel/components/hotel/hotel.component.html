@@ -1,0 +1,17 @@
+<div class="mt-20 px-20">
+  <div class="w-full flex items-center justify-center">
+    <div class="w-96">
+    <h1 class="text-5xl font-bold">welcome To the <span class="text-blue-500">Solution Hotel</span> </h1>
+    <h2 class="font-bold font-jost text-3xl leading-10">List Hotel</h2>
+    <button class="w-44 bg-blue-500 text-white font-bold py-1 rounded-lg mt-3 font-Montserrat "> <i class="fa-solid fa-eye"></i> View More</button>
+    </div>
+    <div class="w-96">
+      <img src="../../../../assets/images/7061505.jpg" alt="">
+    </div>
+  </div>
+  <div class="grid grid-cols-3 pl-5 mt-14  ml-12 mx-10">
+    @for (hotel of (hotels | filter:name); track hotel  ) {
+      <app-hotel-list [hotel]="hotel" ></app-hotel-list>
+    }
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<header class="w-full flex items-center bg-gray-200 justify-center gap-10 h-14 fixed top-0 z-50">
+  <h1 class=" text-3xl ">Best<span class="text-2xl text-blue-500 font-bold">Hotel</span></h1>
+  <nav class="flex items-center gap-16">
+    <div>
+      <form class="flex items-center"#formulaire = 'ngForm' (ngSubmit)="onSearch(formulaire)" >
+        <input type="search" placeholder="Search" name="SearchValue" [(ngModel)]="searchUser" (input)="onTerme()" class="text-center rounded mx-1 w-96 py-1">
+        <button type="submit" class="bg-blue-500 rounded text-white px-2 py-1 w-28">Search</button>
+      </form>
+      @if (searchUser) {
+        <div class="fixed bg-gray-200 top-14 p-2">
+          <h2><span class="font-bold">Fitre Actuel:</span>{{searchUser}}</h2>
+        </div>
+      }
+    </div>
+    <ul class="flex items-center gap-5 ">
+      <li><a routerLink="" class="hover:text-hoveColor">Home</a></li>
+      <li><a routerLink="service" class="hover:text-hoveColor">Services</a></li>
+      <li><a routerLink="contact" class="hover:text-hoveColor" >Contact</a></li>
+      <li><a routerLink="blog" class="hover:text-hoveColor" >Blog</a></li>
+      <a [routerLink]="['hotel','0','edit']">Add Hotel</a>
+    </ul>
+  </nav>
+</header>
